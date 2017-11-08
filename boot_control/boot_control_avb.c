@@ -95,7 +95,7 @@ static int module_isSlotBootable(struct boot_control_module* module,
   AvbABData ab_data;
   bool is_bootable;
 
-  avb_assert(slot < 2);
+  avb_slot_check(slot < 2);
 
   if (avb_ab_data_read(ops->ab_ops, &ab_data) != AVB_IO_RESULT_OK) {
     return -EIO;
@@ -113,7 +113,7 @@ static int module_isSlotMarkedSuccessful(struct boot_control_module* module,
   AvbABData ab_data;
   bool is_marked_successful;
 
-  avb_assert(slot < 2);
+  avb_slot_check(slot < 2);
 
   if (avb_ab_data_read(ops->ab_ops, &ab_data) != AVB_IO_RESULT_OK) {
     return -EIO;
