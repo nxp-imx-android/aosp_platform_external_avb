@@ -200,7 +200,7 @@ cc_library_host_static {
 }
 
 cc_library {
-    name: "bootctrl.default",
+    name: "bootctrl.avb",
     defaults: ["avb_defaults"],
     relative_install_path: "hw",
     static_libs: [
