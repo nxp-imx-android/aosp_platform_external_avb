@@ -248,6 +248,7 @@ cc_library {
     name: "bootctrl.avb",
     defaults: ["avb_defaults"],
     relative_install_path: "hw",
+    vendor: true,
     static_libs: [
         "libavb_user",
         "libfs_mgr",
