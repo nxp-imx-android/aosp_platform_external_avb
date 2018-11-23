@@ -109,9 +109,14 @@ cc_library_static {
         "avb_defaults",
         "avb_sources",
     ],
+    vendor_available: true,
     export_include_dirs: ["."],
     shared_libs: ["libbase"],
-    static_libs: ["libfs_mgr"],
+    static_libs: ["libfstab"],
+    header_libs: [
+        "libhardware_headers",
+        "libsystem_headers",
+    ],
     cflags: [
         "-DAVB_AB_I_UNDERSTAND_LIBAVB_AB_IS_DEPRECATED",
     ],
@@ -224,11 +229,15 @@ cc_library {
     vendor: true,
     static_libs: [
         "libavb_user",
-        "libfs_mgr",
+        "libfstab",
     ],
     shared_libs: [
         "libbase",
         "libcutils",
+    ],
+    header_libs: [
+        "libhardware_headers",
+        "libsystem_headers",
     ],
     cflags: [
         "-DAVB_AB_I_UNDERSTAND_LIBAVB_AB_IS_DEPRECATED",
